@@ -2,6 +2,7 @@ import React from 'react';
 import { Hero } from '../components/home/Hero';
 import { DailyVerseSection } from '../components/home/DailyVerseSection';
 import { MeaningOfMahanaim } from '../components/home/MeaningOfMahanaim';
+import { FounderSpotlight } from '../components/home/FounderSpotlight';
 import { JesusSpotlight } from '../components/home/JesusSpotlight';
 import { MinistriesPreview } from '../components/home/MinistriesPreview';
 import { UpcomingEventsSection } from '../components/home/UpcomingEventsSection';
@@ -17,6 +18,7 @@ export const Home = () => {
       <Hero />
       <DailyVerseSection />
       <MeaningOfMahanaim />
+      <FounderSpotlight />
       <JesusSpotlight />
       <MinistriesPreview />
       <UpcomingEventsSection />
