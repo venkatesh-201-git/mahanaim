@@ -1,0 +1,16 @@
+{
+  "short_name": "Mahanaim",
+  "name": "Mahanaim Prayer Ministries Kandlagunta",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0C172B",
+  "theme_color": "#D4AF37",
+  "display": "standalone",
+  "orientation": "portrait"
+}

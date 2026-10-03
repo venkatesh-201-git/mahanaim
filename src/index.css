@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-primary: #FBF9F5;
+    --color-bg-surface: #FFFFFF;
+    --color-bg-card: rgba(255, 255, 255, 0.85);
+    --color-text-main: #1F2937;
+    --color-text-muted: #6B7280;
+    --color-gold: #D4AF37;
+    --color-gold-glow: rgba(212, 175, 55, 0.25);
+    --color-border: #E8DFD3;
+  }
+
+  .dark {
+    --color-bg-primary: #0C172B;
+    --color-bg-surface: #13213B;
+    --color-bg-card: rgba(19, 33, 59, 0.8);
+    --color-text-main: #F3F4F6;
+    --color-text-muted: #9CA3AF;
+    --color-gold: #E8CA38;
+    --color-gold-glow: rgba(232, 202, 56, 0.3);
+    --color-border: #22375C;
+  }
+
+  html, body, #root {
+    max-width: 100vw;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-main);
+  }
+
+  /* Smooth scroll and mobile touch enhancement */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Telugu text height and legibility enhancement */
+  [lang="te"], .font-telugu {
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Custom Sacred Modern Glass & Glow Utilities */
+@layer utilities {
+  .glass-nav {
+    background: rgba(251, 249, 245, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .dark .glass-nav {
+    background: rgba(12, 23, 43, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+  }
+
+  .dark .glass-card {
+    background: rgba(19, 33, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+  }
+
+  .sacred-gradient-text {
+    background: linear-gradient(135deg, #D4AF37 0%, #E8CA38 50%, #947217 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .dark .sacred-gradient-text {
+    background: linear-gradient(135deg, #FFE66E 0%, #E8CA38 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-border-glow {
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+  }
+
+  .sacred-ray-bg {
+    background: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.12) 0%, rgba(12, 23, 43, 0) 70%);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0C172B;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFE66E;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
