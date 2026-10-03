@@ -134,9 +134,9 @@ export const Hero = () => {
         </div>
 
         {/* Pastor David Raju - Founder Card (Exactly Below Jesus Image) */}
-        <div className="relative z-20 mt-1 sm:mt-2 inline-flex items-center gap-2.5 sm:gap-3.5 bg-midnight-950/90 backdrop-blur-md border border-gold-500/50 rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 pl-2 pr-4 sm:pr-6 shadow-[0_8px_30px_rgba(0,0,0,0.7)] hover:border-gold-400 hover:scale-[1.02] transition-all group select-none">
+        <div className="relative z-20 mt-1 sm:mt-2 inline-flex items-center gap-2 sm:gap-3.5 bg-midnight-950/90 backdrop-blur-md border border-gold-500/50 rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 pl-2 pr-3.5 sm:pr-6 max-w-[95vw] shadow-[0_8px_30px_rgba(0,0,0,0.7)] hover:border-gold-400 hover:scale-[1.02] transition-all group select-none">
           {/* Pastor Photo */}
-          <div className="relative w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-gold-400 shrink-0 shadow-md bg-midnight-900">
+          <div className="relative w-11 h-11 xs:w-13 xs:h-13 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl overflow-hidden border-2 border-gold-400 shrink-0 shadow-md bg-midnight-900">
             <img
               src="/david raju.png"
               alt="Rev. Ch. David Raju Garu"
@@ -145,15 +145,15 @@ export const Hero = () => {
           </div>
 
           {/* Top: వ్యవస్థాపకులు / Founder | Bottom: రెవ. సి. హెచ్. డేవిడ్ రాజు గారు */}
-          <div className="flex flex-col text-left justify-center leading-tight">
+          <div className="flex flex-col text-left justify-center leading-tight overflow-hidden">
             {/* Top: వ్యవస్థాపకులు */}
             <span className="text-[10px] xs:text-[11px] sm:text-xs font-semibold text-gold-400 tracking-wider whitespace-nowrap flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
-              {isTelugu ? 'వ్యవస్థాపకులు' : 'Founder'}
+              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse shrink-0" />
+              <span>{isTelugu ? 'వ్యవస్థాపకులు' : 'Founder'}</span>
             </span>
 
             {/* Bottom: రెవ. సి. హెచ్. డేవిడ్ రాజు గారు */}
-            <span className="text-xs xs:text-sm sm:text-base font-bold text-amber-200 dark:text-gold-200 whitespace-nowrap font-serif tracking-wide drop-shadow-sm mt-0.5">
+            <span className="text-xs xs:text-sm sm:text-base font-bold text-amber-200 dark:text-gold-200 whitespace-nowrap font-serif tracking-wide drop-shadow-sm mt-0.5 truncate">
               {isTelugu ? 'రెవ. సి. హెచ్. డేవిడ్ రాజు గారు' : 'Rev. Ch. David Raju Garu'}
             </span>
           </div>

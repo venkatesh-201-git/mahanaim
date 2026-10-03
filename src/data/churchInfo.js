@@ -47,17 +47,17 @@ export const churchInfo = {
     directionsLink: "https://maps.google.com/?q=Kandlagunta+522603+Andhra+Pradesh"
   },
   contact: {
-    phonePrimary: "+91 94400 00000", // Easily replaceable config placeholder
-    phoneSecondary: "+91 98480 00000",
-    whatsapp: "+91 94400 00000",
+    phonePrimary: "+91 78423 65349",
+    phoneSecondary: "+91 78423 65349",
+    whatsapp: "+91 78423 65349",
     email: "prayer@mahanaimministries.org",
-    prayerHelpline: "1800-000-PRAYER",
+    prayerHelpline: "+91 78423 65349",
   },
   social: {
     facebook: "https://facebook.com/MahanaimPrayerMinistries",
     youtube: "https://youtube.com/@MahanaimPrayerMinistries",
     instagram: "https://instagram.com/mahanaim_prayer_ministries",
-    whatsappGroup: "https://chat.whatsapp.com/invite/placeholder",
+    whatsappGroup: "https://wa.me/917842365349",
   },
   weeklySchedule: [
     {
