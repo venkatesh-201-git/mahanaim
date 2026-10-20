@@ -61,9 +61,10 @@ export const About = () => {
 
             <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-xl border border-gold-500/20">
               <img
-                src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
-                alt="Sanctuary and Mountain of Prayer"
+                src="/church-natural.webp"
+                alt="Mahanaim Prayer Sanctuary Church - Kandlagunta"
                 className="w-full h-80 object-cover"
+                loading="lazy"
               />
             </div>
           </div>

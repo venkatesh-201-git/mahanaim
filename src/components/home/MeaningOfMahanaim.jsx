@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Sparkles, BookOpen, Flame, Heart, Compass, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Shield, Sparkles, BookOpen, Flame, Heart, Compass, CheckCircle2, ArrowRight, Church } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { SectionHeading } from '../common/SectionHeading';
 import { Button } from '../common/Button';
@@ -18,112 +18,148 @@ export const MeaningOfMahanaim = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-white dark:bg-midnight-950 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-10 sm:py-16 md:py-20 bg-white dark:bg-[#070F1E] relative overflow-hidden transition-colors">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Editorial Split Layout: Meaning Storytelling */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center mb-12 sm:mb-16">
           
-          {/* Left Column: Biblical Exposition & Visual Story */}
-          <div className="lg:col-span-6 space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-gold-700 dark:text-gold-300 bg-gold-500/10 border border-gold-500/25">
-              <Sparkles className="w-3.5 h-3.5 text-gold-500" />
-              {t('aboutMahanaim.badge')}
-            </span>
+          {/* Left Column: Biblical Exposition & Meaning */}
+          <div className="lg:col-span-6 space-y-4 sm:space-y-5">
+            {/* Badge */}
+            <div className="flex items-center">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium uppercase tracking-wider text-amber-700 dark:text-amber-300 bg-amber-500/10 border border-amber-500/30">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                {t('aboutMahanaim.badge')}
+              </span>
+            </div>
 
-            <h2 className={`font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-midnight-900 dark:text-white leading-tight ${
-              isTelugu ? 'font-telugu leading-snug' : ''
+            {/* Heading: Single straight line & small font weight as requested */}
+            <h2 className={`text-[17px] xs:text-xl sm:text-2xl md:text-3xl font-medium sm:font-normal text-stone-900 dark:text-stone-100 whitespace-nowrap overflow-hidden text-ellipsis tracking-tight sm:tracking-normal ${
+              isTelugu ? 'font-telugu leading-snug' : 'font-serif'
             }`}>
               {t('aboutMahanaim.title')}
             </h2>
 
-            <div className="p-4 rounded-2xl bg-sacred-100/60 dark:bg-midnight-900/80 border-l-4 border-gold-500 text-sm sm:text-base italic text-stone-800 dark:text-stone-200">
-              {t('aboutMahanaim.scriptureRef')}
+            {/* Scripture Reference Quote Box */}
+            <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-amber-50/70 dark:bg-midnight-900/90 border-l-4 border-amber-500 dark:border-amber-400 border border-amber-200/60 dark:border-amber-500/20 shadow-xs">
+              <div className="flex items-center gap-2 mb-1">
+                <BookOpen className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                <span className="text-xs sm:text-sm font-semibold text-amber-700 dark:text-amber-300">
+                  {isTelugu ? 'ఆదికాండము 32:2' : 'Genesis 32:2'}
+                </span>
+              </div>
+              <p className={`text-xs sm:text-sm text-stone-800 dark:text-stone-200 font-normal italic leading-relaxed ${
+                isTelugu ? 'font-telugu not-italic' : ''
+              }`}>
+                {t('aboutMahanaim.scriptureRef')}
+              </p>
             </div>
 
-            <p className={`text-base sm:text-lg text-stone-600 dark:text-stone-300 leading-relaxed ${
+            {/* Explanation paragraph: Clear, high contrast, readable */}
+            <p className={`text-xs sm:text-sm md:text-base text-stone-700 dark:text-stone-300 font-normal leading-relaxed ${
               isTelugu ? 'font-telugu' : ''
             }`}>
               {t('aboutMahanaim.meaningDesc')}
             </p>
 
-            <div className="space-y-3 pt-2">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-1" />
-                <div>
-                  <h4 className="text-base font-bold text-midnight-900 dark:text-white">
+            {/* Vision & Mission Cards: Highly mobile friendly & clean */}
+            <div className="space-y-2.5 sm:space-y-3 pt-1">
+              {/* Vision Card */}
+              <div className="p-3 sm:p-3.5 rounded-xl bg-stone-50 dark:bg-midnight-900/70 border border-stone-200 dark:border-midnight-800 hover:border-amber-400/50 transition-colors flex items-start gap-2.5 sm:gap-3">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500 shrink-0 mt-0.5" />
+                <div className="min-w-0">
+                  <h4 className={`text-xs sm:text-sm font-semibold text-stone-900 dark:text-stone-100 ${isTelugu ? 'font-telugu' : ''}`}>
                     {t('aboutMahanaim.visionTitle')}
                   </h4>
-                  <p className="text-sm text-stone-600 dark:text-stone-300">
+                  <p className={`text-[11px] sm:text-xs md:text-sm text-stone-600 dark:text-stone-300 font-normal mt-0.5 leading-relaxed ${isTelugu ? 'font-telugu' : ''}`}>
                     {t('aboutMahanaim.visionDesc')}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-gold-500 shrink-0 mt-1" />
-                <div>
-                  <h4 className="text-base font-bold text-midnight-900 dark:text-white">
+              {/* Mission Card */}
+              <div className="p-3 sm:p-3.5 rounded-xl bg-stone-50 dark:bg-midnight-900/70 border border-stone-200 dark:border-midnight-800 hover:border-amber-400/50 transition-colors flex items-start gap-2.5 sm:gap-3">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500 shrink-0 mt-0.5" />
+                <div className="min-w-0">
+                  <h4 className={`text-xs sm:text-sm font-semibold text-stone-900 dark:text-stone-100 ${isTelugu ? 'font-telugu' : ''}`}>
                     {t('aboutMahanaim.missionTitle')}
                   </h4>
-                  <p className="text-sm text-stone-600 dark:text-stone-300">
+                  <p className={`text-[11px] sm:text-xs md:text-sm text-stone-600 dark:text-stone-300 font-normal mt-0.5 leading-relaxed ${isTelugu ? 'font-telugu' : ''}`}>
                     {t('aboutMahanaim.missionDesc')}
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-4">
-              <Button to="/about" variant="primary" icon={ArrowRight} iconPosition="right">
+            {/* Learn More Button */}
+            <div className="pt-2">
+              <Button to="/about" variant="primary" size="sm" icon={ArrowRight} iconPosition="right" className="font-normal text-xs sm:text-sm">
                 {t('aboutMahanaim.learnMore')}
               </Button>
             </div>
           </div>
 
-          {/* Right Column: Layered Visual Graphic Card */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Main Background Image Card */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gold-500/30 group">
+          {/* Right Column: Natural Church Sanctuary Picture (Mobile Friendly & Optimized WebP) */}
+          <div className="lg:col-span-6 relative mt-4 lg:mt-0">
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
+              
+              {/* Natural Church Photo Card */}
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl border-2 border-amber-400/40 dark:border-gold-500/30 group bg-stone-900">
                 <img
-                  src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1000&q=80"
-                  alt="Hosts of Angels at Mahanaim"
-                  className="w-full h-[400px] sm:h-[480px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="/church-natural.webp"
+                  alt="Mahanaim Prayer Sanctuary Church in Nature - Kandlagunta"
+                  className="w-full h-64 xs:h-72 sm:h-96 lg:h-[430px] object-cover object-center transition-transform duration-700 group-hover:scale-102"
+                  loading="lazy"
+                  decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/40 to-transparent" />
                 
-                {/* Floating Overlay Badge on Image */}
-                <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-midnight-900/90 backdrop-blur-md border border-gold-500/30 text-white">
-                  <span className="text-xs uppercase tracking-wider text-gold-400 font-semibold block mb-1">
+                {/* Subtle soft gradient at bottom for text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                
+                {/* Top Badge: Natural Sanctuary */}
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-medium text-white bg-black/60 backdrop-blur-md border border-white/20 shadow-sm">
+                    <Church className="w-3.5 h-3.5 text-amber-300" />
+                    <span>{isTelugu ? 'పవిత్ర ప్రార్థనా మందిరం' : 'Holy Prayer Sanctuary'}</span>
+                  </span>
+                </div>
+
+                {/* Bottom Overlay Badge on Image */}
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-black/70 backdrop-blur-md border border-amber-400/40 text-white">
+                  <span className="text-[10px] sm:text-xs uppercase tracking-wider text-amber-300 font-semibold block mb-0.5">
                     Genesis 32:2 • מַחֲנַיִם
                   </span>
-                  <p className="text-sm sm:text-base font-serif font-bold text-white">
-                    {isTelugu ? 'దేవుని రక్షక దూతల సైన్యం దిగిన పవిత్ర స్థలము' : 'The Sacred Ground of God\'s Protecting Host'}
+                  <p className="text-xs sm:text-sm md:text-base font-normal text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                    {isTelugu ? 'దేవుని రక్షక దూతల సైన్యం కావలి ఉన్న పవిత్ర స్థలము' : 'The Sacred Ground of God\'s Protecting Host'}
                   </p>
-                  <p className="text-xs text-stone-300 mt-1">
-                    Kandlagunta, Andhra Pradesh, India
+                  <p className="text-[10px] sm:text-xs text-stone-300 mt-0.5 font-light">
+                    Kandlagunta (522603), Andhra Pradesh, India
                   </p>
                 </div>
               </div>
 
-              {/* Decorative Floating Card */}
-              <div className="hidden sm:block absolute -top-6 -right-6 p-4 rounded-2xl bg-white dark:bg-midnight-800 shadow-xl border border-gold-500/20 max-w-[200px] animate-float">
-                <div className="w-8 h-8 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-500 mb-2">
-                  <Shield className="w-5 h-5" />
+              {/* Decorative Subtle Floating Pill (Hidden on small mobile, visible on tablet+) */}
+              <div className="hidden sm:flex absolute -top-4 -right-4 p-3 rounded-xl bg-white dark:bg-midnight-900 shadow-lg border border-amber-400/30 items-center gap-2.5 max-w-[200px]">
+                <div className="w-7 h-7 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500 shrink-0">
+                  <Shield className="w-4 h-4" />
                 </div>
-                <p className="text-xs font-bold text-midnight-900 dark:text-white">
-                  {isTelugu ? 'రెండు సేనలు' : 'Two Heavenly Hosts'}
-                </p>
-                <p className="text-[11px] text-stone-500 dark:text-stone-400">
-                  Divine Protection
-                </p>
+                <div>
+                  <p className="text-xs font-semibold text-stone-900 dark:text-white leading-tight">
+                    {isTelugu ? 'రెండు సేనలు' : 'Two Hosts'}
+                  </p>
+                  <p className="text-[10px] text-stone-500 dark:text-stone-400 font-light">
+                    Divine Protection
+                  </p>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
 
-        {/* Pillars Grid */}
-        <div className="pt-10 border-t border-stone-200 dark:border-midnight-800">
+        {/* Pillars Grid: Responsive & Clean */}
+        <div className="pt-8 sm:pt-12 border-t border-stone-200 dark:border-midnight-800">
           <SectionHeading
             badge="Foundations of Faith"
             title={t('values.title')}
@@ -131,21 +167,21 @@ export const MeaningOfMahanaim = () => {
             align="center"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 mt-6 sm:mt-8">
             {pillars.map((pillar) => {
               const PillarIcon = pillar.icon;
               return (
                 <div
                   key={pillar.key}
-                  className="glass-card rounded-2xl p-6 hover:shadow-sacred hover:border-gold-500/40 transition-all duration-300 group"
+                  className="rounded-xl sm:rounded-2xl p-4 sm:p-5 bg-stone-50 dark:bg-midnight-900/60 border border-stone-200 dark:border-midnight-800 hover:border-amber-400/50 hover:shadow-md transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gold-500/10 dark:bg-gold-500/20 text-gold-600 dark:text-gold-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <PillarIcon className="w-6 h-6" />
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                    <PillarIcon className="w-5 h-5 sm:w-5 sm:h-5" />
                   </div>
-                  <h3 className={`text-lg font-bold text-midnight-900 dark:text-white mb-2 ${isTelugu ? 'font-telugu' : ''}`}>
+                  <h3 className={`text-sm sm:text-base font-semibold text-stone-900 dark:text-stone-100 mb-1.5 ${isTelugu ? 'font-telugu' : ''}`}>
                     {pillar.title}
                   </h3>
-                  <p className={`text-sm text-stone-600 dark:text-stone-300 leading-relaxed ${isTelugu ? 'font-telugu' : ''}`}>
+                  <p className={`text-xs sm:text-sm text-stone-600 dark:text-stone-300 font-normal leading-relaxed ${isTelugu ? 'font-telugu' : ''}`}>
                     {pillar.desc}
                   </p>
                 </div>
