@@ -55,7 +55,7 @@ export const Navbar = ({ onOpenSearch }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/98 dark:bg-[#0c172b]/98 backdrop-blur-xl border-b border-stone-200/90 dark:border-gold-500/20 shadow-[0_4px_25px_rgba(0,0,0,0.06)] select-none">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white dark:bg-[#070F1E] border-b border-stone-200 dark:border-gold-500/30 shadow-[0_4px_20px_rgba(0,0,0,0.08)] select-none antialiased">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
         
         {/* Left: Fixed Logo */}
@@ -73,15 +73,15 @@ export const Navbar = ({ onOpenSearch }) => {
                 `px-2.5 py-1.5 rounded-lg text-sm font-bold transition-colors whitespace-nowrap relative ${
                   isActive
                     ? 'text-gold-600 dark:text-gold-400 font-extrabold'
-                    : 'text-black dark:text-stone-200 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-gold-500/10'
-                } ${isTelugu ? 'font-telugu text-[13.5px]' : ''}`
+                    : 'text-stone-900 dark:text-stone-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-gold-500/10'
+                } ${isTelugu ? 'font-telugu text-[14px]' : ''}`
               }
             >
               {({ isActive }) => (
                 <>
                   <span>{link.label}</span>
                   {isActive && (
-                    <span className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-4 h-[2.5px] bg-gold-500 rounded-full" />
+                    <span className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-4 h-[2.5px] bg-gold-500 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
                   )}
                 </>
               )}
@@ -92,15 +92,15 @@ export const Navbar = ({ onOpenSearch }) => {
           <div className="relative inline-block">
             <button
               onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-bold text-black dark:text-stone-200 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-gold-500/10 transition-colors whitespace-nowrap"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-bold text-stone-900 dark:text-stone-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-gold-500/10 transition-colors whitespace-nowrap"
             >
-              <span className={isTelugu ? 'font-telugu text-[13.5px]' : ''}>{isTelugu ? 'మరిన్ని' : 'More'}</span>
+              <span className={isTelugu ? 'font-telugu text-[14px]' : ''}>{isTelugu ? 'మరిన్ని' : 'More'}</span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
 
             {moreDropdownOpen && (
               <div 
-                className="absolute right-0 mt-2 w-52 bg-white dark:bg-midnight-900 rounded-2xl shadow-2xl border border-stone-200 dark:border-gold-500/30 p-1.5 z-50 animate-in fade-in zoom-in-95 duration-100"
+                className="absolute right-0 mt-2 w-52 bg-white dark:bg-[#0A182E] rounded-2xl shadow-2xl border border-stone-200 dark:border-gold-500/30 p-1.5 z-50 animate-in fade-in zoom-in-95 duration-100"
                 onMouseLeave={() => setMoreDropdownOpen(false)}
               >
                 {moreLinks.map((item) => {
@@ -114,12 +114,12 @@ export const Navbar = ({ onOpenSearch }) => {
                         `flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs sm:text-sm transition-colors ${
                           isActive
                             ? 'bg-gold-500/15 text-gold-600 dark:text-gold-400 font-bold'
-                            : 'text-black dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-midnight-800 hover:text-gold-600'
+                            : 'text-stone-900 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-midnight-800 hover:text-gold-600'
                         } ${isTelugu ? 'font-telugu' : ''}`
                       }
                     >
                       <ItemIcon className="w-4 h-4 text-gold-500 shrink-0" />
-                      <span className="whitespace-nowrap font-medium">{item.label}</span>
+                      <span className="whitespace-nowrap font-semibold">{item.label}</span>
                     </NavLink>
                   );
                 })}
@@ -131,13 +131,13 @@ export const Navbar = ({ onOpenSearch }) => {
         {/* Right: Controls */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0 whitespace-nowrap">
           {/* Simple Language Switcher */}
-          <div className="inline-flex items-center bg-stone-100 dark:bg-midnight-800 p-0.5 rounded-xl border border-stone-300 dark:border-midnight-700 shrink-0 shadow-xs">
+          <div className="inline-flex items-center bg-stone-100 dark:bg-midnight-900 p-0.5 rounded-xl border border-stone-300 dark:border-midnight-700 shrink-0 shadow-xs">
             <button
               onClick={() => setLang('en')}
               className={`px-2.5 py-1 text-xs font-bold rounded-lg transition-all ${
                 lang === 'en'
                   ? 'bg-gold-500 text-black shadow-sm'
-                  : 'text-black dark:text-stone-300 hover:text-gold-600 dark:hover:text-white'
+                  : 'text-stone-900 dark:text-stone-200 hover:text-gold-600 dark:hover:text-white'
               }`}
             >
               EN
@@ -147,7 +147,7 @@ export const Navbar = ({ onOpenSearch }) => {
               className={`px-2.5 py-1 text-xs font-bold rounded-lg font-telugu transition-all ${
                 lang === 'te'
                   ? 'bg-gold-500 text-black shadow-sm'
-                  : 'text-black dark:text-stone-300 hover:text-gold-600 dark:hover:text-white'
+                  : 'text-stone-900 dark:text-stone-200 hover:text-gold-600 dark:hover:text-white'
               }`}
             >
               తెలుగు

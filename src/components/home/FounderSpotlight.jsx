@@ -40,11 +40,19 @@ export const FounderSpotlight = () => {
               
               {/* Image Frame with Small Sacred Gold Border */}
               <div className="relative rounded-3xl overflow-hidden border-2 border-gold-400/80 dark:border-gold-500/70 shadow-sacred-lg bg-midnight-900 aspect-[4/5] flex items-center justify-center">
-                <img
-                  src="/preist.png"
-                  alt="Rev. Ch. David Raju Garu"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
+                <picture className="w-full h-full">
+                  <source media="(max-width: 640px)" srcSet="/preist-sm.webp" type="image/webp" />
+                  <source media="(min-width: 641px)" srcSet="/preist.webp" type="image/webp" />
+                  <img
+                    src="/preist.png"
+                    alt="Rev. Ch. David Raju Garu"
+                    width="360"
+                    height="450"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </picture>
 
                 {/* Ordained Minister Golden Badge Top-Right */}
                 <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-midnight-950/90 text-gold-300 border border-gold-400/50 text-[10px] sm:text-xs font-bold tracking-wider uppercase backdrop-blur-md shadow-md flex items-center gap-1">

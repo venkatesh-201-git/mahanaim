@@ -32,6 +32,13 @@
     <!-- Web App Manifest -->
     <link rel="manifest" href="/manifest.json" />
 
+    <!-- Performance Preloads for Instant Mobile Image Loading (Zero Delay) -->
+    <link rel="preload" as="image" href="/bg-sm.webp" type="image/webp" fetchpriority="high" media="(max-width: 640px)" />
+    <link rel="preload" as="image" href="/bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 641px)" />
+    <link rel="preload" as="image" href="/jesusu2-sm.webp" type="image/webp" fetchpriority="high" media="(max-width: 640px)" />
+    <link rel="preload" as="image" href="/jesusu2.webp" type="image/webp" fetchpriority="high" media="(min-width: 641px)" />
+    <link rel="preload" as="image" href="/david-raju-sm.webp" type="image/webp" />
+
     <!-- Google Fonts Preconnect & Stylesheets -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

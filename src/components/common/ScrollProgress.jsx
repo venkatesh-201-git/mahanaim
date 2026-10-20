@@ -17,7 +17,7 @@ export const ScrollProgress = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-[3px] z-50 bg-transparent pointer-events-none">
+    <div className="fixed top-0 left-0 w-full h-[3px] z-[60] bg-transparent pointer-events-none">
       <div
         className="h-full bg-gradient-to-r from-gold-500 via-amber-300 to-gold-600 transition-all duration-75 shadow-glow-gold"
         style={{ width: `${scrollProgress}%` }}

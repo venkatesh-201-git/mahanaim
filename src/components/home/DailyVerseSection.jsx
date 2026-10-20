@@ -68,29 +68,36 @@ export const DailyVerseSection = () => {
     <section className="py-12 sm:py-16 bg-sacred-100/50 dark:bg-midnight-900/50 relative">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Daily Verse Card */}
-        <div className="relative rounded-3xl p-6 sm:p-10 md:p-12 overflow-hidden bg-gradient-to-br from-white via-sacred-50 to-sacred-100 dark:from-midnight-900 dark:via-midnight-950 dark:to-midnight-900 border border-gold-500/30 shadow-sacred-lg">
+        {/* Daily Verse Card with siluvaa.webp background (Ultra-Clear Visibility) */}
+        <div className="relative rounded-3xl p-6 sm:p-10 md:p-12 overflow-hidden border-2 border-gold-400/60 shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
           
-          {/* Subtle watermarked open Bible SVG background */}
-          <div className="absolute right-4 bottom-4 text-gold-500/5 dark:text-gold-400/5 pointer-events-none">
-            <BookOpen className="w-48 h-48 sm:w-64 sm:h-64" />
+          {/* Background Image: siluvaa.webp — Ultra-Clear, Sharp & High Visibility */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/siluvaa.webp"
+              alt="ఈ నాటి వాక్యం - సిలువ నేపథ్యం"
+              className="w-full h-full object-cover object-center brightness-110 contrast-105"
+              loading="eager"
+            />
+            {/* Ultra-light subtle protective tint so siluvaa.webp background image is fully and clearly visible */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/35" />
           </div>
 
           <div className="relative z-10 flex flex-col items-center text-center">
-            {/* Badge */}
-            <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-gold-700 dark:text-gold-300 bg-gold-500/10 border border-gold-500/30 mb-5">
+            {/* Badge - Clean & Elegant */}
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider text-amber-300 bg-black/50 border border-amber-400/50 backdrop-blur-md mb-5 shadow-md">
               {t('dailyVerse.badge')}
             </span>
 
-            {/* Quote Text */}
-            <blockquote className={`font-serif italic text-xl sm:text-2xl md:text-3xl lg:text-3xl text-midnight-900 dark:text-stone-100 leading-relaxed max-w-3xl mb-6 ${
-              isTelugu ? 'font-telugu-serif not-italic leading-relaxed' : ''
+            {/* Quote Text - Beautiful, Elegant, Non-Bold Typography */}
+            <blockquote className={`font-serif italic text-xl sm:text-2xl md:text-3xl lg:text-3xl text-white font-normal leading-relaxed max-w-3xl mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] ${
+              isTelugu ? 'font-telugu-serif not-italic leading-relaxed font-normal' : ''
             }`}>
               "{verseText}"
             </blockquote>
 
             {/* Reference */}
-            <cite className="font-sans font-bold text-base sm:text-lg text-gold-600 dark:text-gold-400 not-italic mb-8">
+            <cite className="font-sans font-medium text-base sm:text-lg text-amber-300 not-italic mb-8 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
               — {verseRef}
             </cite>
 
@@ -98,23 +105,23 @@ export const DailyVerseSection = () => {
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <button
                 onClick={handleCopy}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-white dark:bg-midnight-800 text-stone-700 dark:text-stone-200 hover:bg-gold-500/10 hover:text-gold-600 border border-stone-200 dark:border-midnight-700 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-black/50 backdrop-blur-md text-white hover:bg-gold-500 hover:text-midnight-950 border border-amber-400/40 transition-all shadow-md active:scale-95"
               >
-                {copied ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-gold-500" />}
+                {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-gold-400" />}
                 <span>{copied ? t('dailyVerse.copied') : t('dailyVerse.copy')}</span>
               </button>
 
               <button
                 onClick={handleShare}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-white dark:bg-midnight-800 text-stone-700 dark:text-stone-200 hover:bg-gold-500/10 hover:text-gold-600 border border-stone-200 dark:border-midnight-700 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-black/50 backdrop-blur-md text-white hover:bg-gold-500 hover:text-midnight-950 border border-amber-400/40 transition-all shadow-md active:scale-95"
               >
-                <Share2 className="w-4 h-4 text-gold-500" />
+                <Share2 className="w-4 h-4 text-gold-400" />
                 <span>{t('dailyVerse.share')}</span>
               </button>
 
               <Link
                 to="/bible"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-midnight-900 text-white hover:bg-midnight-800 dark:bg-gold-500 dark:text-midnight-950 dark:hover:bg-gold-400 transition-colors shadow-sm"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gold-500 text-midnight-950 hover:bg-gold-400 transition-all shadow-md active:scale-95"
               >
                 <BookOpen className="w-4 h-4" />
                 <span>{t('dailyVerse.exploreBible')}</span>
@@ -149,7 +156,9 @@ export const DailyVerseSection = () => {
                 key={activeImgIndex}
                 src={foodImages[activeImgIndex].src}
                 alt={isTelugu ? foodImages[activeImgIndex].titleTe : foodImages[activeImgIndex].titleEn}
-                className="w-full h-full object-cover animate-in fade-in duration-500"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover transition-opacity duration-300"
               />
 
               {/* Bottom Caption Overlay */}

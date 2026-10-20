@@ -115,6 +115,28 @@
   }
 }
 
+/* Water Flow & Ripple Keyframe Animations (GPU accelerated) */
+@keyframes flowingWater {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(-20px) scaleY(1);
+  }
+  50% {
+    transform: translateX(20px) scaleY(1.15);
+  }
+  100% {
+    transform: translateX(-10px) scaleY(0.95);
+  }
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
